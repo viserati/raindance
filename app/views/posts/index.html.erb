@@ -1,2 +1,9 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>Welcome to Raindance</h1>
+<center><%=link_to "Create a New Post", new_post_path %></center>
+<% @posts.each do |post| %>
+<h2><%=post.title %></h2>
+<div><%=truncate(post.body, :length => 35) %></div>
+<br>
+<%=link_to "Read Post", post %> &nbsp
+
+<% end %>
